@@ -8,10 +8,12 @@ Following folder/file have been uploaded in the AWS Instance
   - Source code present at **CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/src/main/java/luceneProject/**
   - trec_eval present at **CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/src/trec_eval-9.0.7**
 
-# Instructions on how to build the source code
+# Getting Started
 
   - Open Terminal/Command Prompt on you PC/MAC/Linux System
   - Copy the commands present below one at a time
+  
+# Instructions on how to build the source code
   ```sh
 $ ssh ayush@ec2-52-90-142-34.compute-1.amazonaws.com
 
