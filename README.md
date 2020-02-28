@@ -21,6 +21,7 @@ Following folder/file have been uploaded in the AWS Instance
 
 - Open Terminal/Command Prompt on you PC/MAC/Linux System
 - Copy the commands present below one at a time
+- Note: This project uses the new version of the QRel file named as **cranqrelnew**
 
 ## How to access our AWS instance: 
   ```sh
@@ -51,5 +52,5 @@ $ cd src/trec_eval-9.0.7/
 
 $ make
 
-$ ./trec_eval ../cran/cranqrel ../../result.txt
+$ ./trec_eval ../cran/cranqrelnew ../query-rankings.txt
 ```
