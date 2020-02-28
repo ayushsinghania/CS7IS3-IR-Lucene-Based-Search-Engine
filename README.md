@@ -22,7 +22,7 @@ Following folder/file have been uploaded in the AWS Instance
 - Open Terminal/Command Prompt on you PC/MAC/Linux System
 - Copy the commands present below one at a time
 
-## Instructions on how to access our AWS instance: 
+## How to access our AWS instance: 
   ```sh
 $ ssh ayush@ec2-52-90-142-34.compute-1.amazonaws.com
 
@@ -32,7 +32,7 @@ Enter **ayush** as password
 
 Now you are inside the AWS instance. Again copy the commands and run at a time
 
-## Instructions on how to build the source code
+## How to build the source code
 
  ```sh
 $ cd CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/
@@ -41,11 +41,11 @@ $ sudo mvn package
 
 $[sudo] password for ayush: ayush (enter password if promted)
 ```
-## Instructions on how to run the source code
+## How to run the source code
  ```sh
 $ sudo java -jar target/luceneProject-0.0.1-SNAPSHOT.jar
 ```
-## Instructions on how to get the program's output
+## How to get the program's output
 ```sh
 $ cd src/trec_eval-9.0.7/
 
