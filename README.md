@@ -15,7 +15,7 @@ Following folder/file have been uploaded in the AWS Instance
 - Password: ayush
 
 ## AWS Instance's IP address
- - IPv4 Public IP: 52.90.142.34
+ - IPv4 Public IP: **52.90.142.34**
  
 ## Getting Started
 
