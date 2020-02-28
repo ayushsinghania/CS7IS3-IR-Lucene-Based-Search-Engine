@@ -21,7 +21,7 @@ Following folder/file have been uploaded in the AWS Instance
 
 - Open Terminal/Command Prompt on you PC/MAC/Linux System
 - Copy the commands present below one at a time
-- **Note:** This project uses the new version of the QRel file named as **cranqrelnew**
+- **Note:** This project uses the new version of the QRel file renamed as **cranqrelnew**
 
 ## How to access our AWS instance: 
   ```sh
