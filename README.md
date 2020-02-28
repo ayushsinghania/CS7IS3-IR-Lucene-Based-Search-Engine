@@ -52,7 +52,7 @@ $ cd src/trec_eval-9.0.7/
 
 $ make
 
-$ ./trec_eval ../cran/cranqrelnew ../EngAnalyzer_BM25.txt.txt
+$ ./trec_eval ../cran/cranqrelnew ../EngAnalyzer_BM25.txt
 ```
 
 ## To display only Mean Average Precision (MAP) & Recall
