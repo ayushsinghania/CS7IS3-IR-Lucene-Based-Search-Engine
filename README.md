@@ -46,11 +46,17 @@ $[sudo] password for ayush: ayush (enter password if promted)
  ```sh
 $ sudo java -jar target/luceneProject-0.0.1-SNAPSHOT.jar
 ```
-## How to get the program's output
+## How to get the program's best output (score)
 ```sh
 $ cd src/trec_eval-9.0.7/
 
 $ make
 
-$ ./trec_eval ../cran/cranqrelnew ../query-rankings.txt
+$ ./trec_eval ../cran/cranqrelnew ../EngAnalyzer_BM25.txt.txt
 ```
+
+## To display only Mean Average Precision (MAP) & Recall
+```sh
+$ ./trec_eval -m map -m recall ../cran/cranqrelnew ../EngAnalyzer_BM25.txt
+```
+
