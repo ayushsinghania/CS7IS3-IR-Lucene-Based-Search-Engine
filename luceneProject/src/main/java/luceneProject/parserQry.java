@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.nio.file.Paths;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.core.KeywordAnalyzer;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
@@ -22,6 +23,7 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.search.similarities.BM25Similarity;
 import org.apache.lucene.search.similarities.ClassicSimilarity;
+import org.apache.lucene.search.similarities.LMDirichletSimilarity;
 import org.apache.lucene.search.IndexSearcher;
 
 import org.apache.lucene.store.FSDirectory;
@@ -29,20 +31,48 @@ import org.apache.lucene.store.FSDirectory;
 
 public class parserQry {
 	
-	public static void main(String[] args) throws Exception {
+	public static void main(Integer similarity, Integer analyzer, String Path) throws Exception {
 		String index_Path = "src/index";
-		String result_Path = "result.txt";
+		String result_Path = Path;
 		IndexReader index_Reader = DirectoryReader.open(FSDirectory.open(Paths.get(index_Path)));
 		IndexSearcher index_Searcher = new IndexSearcher(index_Reader);
-		index_Searcher.setSimilarity(new BM25Similarity());
+		
+		if(similarity == 1)
+		{
+			index_Searcher.setSimilarity(new BM25Similarity());
+		}
+		else if (similarity == 2)
+		{
+			index_Searcher.setSimilarity(new ClassicSimilarity());
+		}
+		else if (similarity == 3)
+		{
+			index_Searcher.setSimilarity(new LMDirichletSimilarity());
+		}
+			
 		PrintWriter print_Writer = new PrintWriter(result_Path, "UTF-8");
 	    try 
 	    {
 			File file = new File("src/cran/cran.qry");
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			Analyzer std_analyzer = new EnglishAnalyzer();
-			MultiFieldQueryParser multi_parser = new MultiFieldQueryParser(new String[] {"title","authors","locations","content"}, std_analyzer);
+			Analyzer selected_analyzer = null;
+			
+			if(analyzer == 1)
+			{
+				 selected_analyzer = new StandardAnalyzer();
+			}
+			else if (analyzer == 2)
+			{
+				 selected_analyzer = new EnglishAnalyzer(EnglishAnalyzer.getDefaultStopSet());
+			}
+			else if (analyzer == 3)
+			{
+				selected_analyzer = new trialAnalyzer();
+			}
+			
+			//Analyzer selected_analyzer = new EnglishAnalyzer(EnglishAnalyzer.getDefaultStopSet());
+			MultiFieldQueryParser multi_parser = new MultiFieldQueryParser(new String[] {"title","authors","locations","content"}, selected_analyzer);
 			String line;
 		    int count = 1;
 		    boolean print = true;
@@ -66,7 +96,7 @@ public class parserQry {
 		              Document doc = new Document();
 		              doc.add(new TextField("id",id,Field.Store.YES));
 		              doc.add(new TextField("content",content,Field.Store.YES));
-		              System.out.println(doc);
+		              //System.out.println(doc);
 		              
 		            }
 		            else{
@@ -99,7 +129,7 @@ public class parserQry {
 		      Document doc = new Document();
 		      doc.add(new TextField("id",id,Field.Store.YES));
               doc.add(new TextField("content",content,Field.Store.YES));
-              System.out.println(doc);
+              //System.out.println(doc);
               Query query = multi_parser.parse(QueryParser.escape(content));
               searchEngine(index_Searcher,print_Writer,count,query);
 		      fileReader.close();
@@ -116,10 +146,9 @@ public class parserQry {
 	    TopDocs results = index_Searcher.search(query, 1400);
 	    ScoreDoc[] hits = results.scoreDocs;
 
-	    // Write the results for each hit
 	    for(int i=0;i<hits.length;i++){
 	      Document doc = index_Searcher.doc(hits[i].doc);
-	      print_Writer.println(count + " 0 " + doc.get("id") + " " + i + " " + hits[i].score + " STD");
+	      print_Writer.println(count + " 0 " + doc.get("id") + " " + i + " " + hits[i].score + " SCORE");
 	    }
 	  }
 
