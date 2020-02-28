@@ -31,57 +31,57 @@ public class assignment1 {
 		
 		System.out.println("Building Index for the Cranfield Collection using StandardAnalyzer & BM25Similarity");
 		build_Index.main(1,1);
-		System.out.println("Build Successful\n");
+		System.out.println("Build Successful");
 		System.out.println("Testing & Evaluating our search engine using the queries provided");
-		System.out.println("Please Wait.....\n");
+		System.out.println("Please Wait.....");
 		search_Query.main(1,1,Path11);
 		System.out.println("Search Completed\n");
 		
 		System.out.println("Building Index for the Cranfield Collection using StandardAnalyzer & ClassicSimilarity");
 		build_Index.main(2,1);
-		System.out.println("Build Successful\n");
+		System.out.println("Build Successful");
 		System.out.println("Testing & Evaluating our search engine using the queries provided");
-		System.out.println("Please Wait.....\n");
+		System.out.println("Please Wait.....");
 		search_Query.main(2,1,Path21);
 		System.out.println("Search Completed\n");
 		
 		System.out.println("Building Index for the Cranfield Collection using StandardAnalyzer & BM25Similarity");
 		build_Index.main(3,1);
-		System.out.println("Build Successful\n");
+		System.out.println("Build Successful");
 		System.out.println("Testing & Evaluating our search engine using the queries provided");
-		System.out.println("Please Wait.....\n");
+		System.out.println("Please Wait.....");
 		search_Query.main(3,1,Path31);
 		System.out.println("Search Completed\n");
 		
 		System.out.println("Building Index for the Cranfield Collection using EnglishAnalyzer & BM25Similarity");
 		build_Index.main(1,2);
-		System.out.println("Build Successful\n");
+		System.out.println("Build Successful");
 		System.out.println("Testing & Evaluating our search engine using the queries provided");
-		System.out.println("Please Wait.....\n");
+		System.out.println("Please Wait.....");
 		search_Query.main(1,2,Path12);
 		System.out.println("Search Completed\n");
 		
 		System.out.println("Building Index for the Cranfield Collection using EnglishAnalyzer & ClassicSimilarity");
 		build_Index.main(2,2);
-		System.out.println("Build Successful\n");
+		System.out.println("Build Successful");
 		System.out.println("Testing & Evaluating our search engine using the queries provided");
-		System.out.println("Please Wait.....\n");
+		System.out.println("Please Wait.....");
 		search_Query.main(2,2,Path22);
 		System.out.println("Search Completed\n");
 		
 		System.out.println("Building Index for the Cranfield Collection using EnglishAnalyzer & LMDirichletSimilarity");
 		build_Index.main(3,2);
-		System.out.println("Build Successful\n");
+		System.out.println("Build Successful");
 		System.out.println("Testing & Evaluating our search engine using the queries provided");
-		System.out.println("Please Wait.....\n");
+		System.out.println("Please Wait.....");
 		search_Query.main(3,2,Path32);
 		System.out.println("Search Completed\n");
 		
 		System.out.println("Experimental query using trial Analyzer & BM25Similarity");
 		build_Index.main(2,3);
-		System.out.println("Build Successful\n");
+		System.out.println("Build Successful");
 		System.out.println("Testing & Evaluating our search engine using the queries provided");
-		System.out.println("Please Wait.....\n");
+		System.out.println("Please Wait.....");
 		search_Query.main(3,2,Path32);
 		System.out.println("Search Completed\n");
 		

@@ -143,7 +143,7 @@ public class parserQry {
 		}
 	
 	public static void searchEngine(IndexSearcher index_Searcher, PrintWriter print_Writer, Integer count, Query query) throws IOException {
-	    TopDocs results = index_Searcher.search(query, 1400);
+	    TopDocs results = index_Searcher.search(query, 900);
 	    ScoreDoc[] hits = results.scoreDocs;
 
 	    for(int i=0;i<hits.length;i++){
