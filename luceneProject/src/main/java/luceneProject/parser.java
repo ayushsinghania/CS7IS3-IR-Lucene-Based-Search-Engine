@@ -11,12 +11,14 @@ import java.io.IOException;
 import java.nio.file.Paths;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.search.similarities.BM25Similarity;
 import org.apache.lucene.search.similarities.ClassicSimilarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
@@ -31,11 +33,11 @@ public class parser {
 	public static void main(String[] args) throws IOException {
 	    try 
 	    {	        
-	    	Analyzer std_analyzer = new StandardAnalyzer();
+	    	Analyzer std_analyzer = new EnglishAnalyzer();
 	    	Directory dir = FSDirectory.open(Paths.get(Index_Dir));
 	    	IndexWriterConfig config = new IndexWriterConfig(std_analyzer);
 	    	config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
-	    	config.setSimilarity(new ClassicSimilarity());
+	    	config.setSimilarity(new BM25Similarity());
 	    	
 	    	IndexWriter index_Writer = new IndexWriter(dir, config);
 	    	

@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.nio.file.Paths;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -19,6 +20,8 @@ import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.similarities.BM25Similarity;
+import org.apache.lucene.search.similarities.ClassicSimilarity;
 import org.apache.lucene.search.IndexSearcher;
 
 import org.apache.lucene.store.FSDirectory;
@@ -31,13 +34,14 @@ public class parserQry {
 		String result_Path = "result.txt";
 		IndexReader index_Reader = DirectoryReader.open(FSDirectory.open(Paths.get(index_Path)));
 		IndexSearcher index_Searcher = new IndexSearcher(index_Reader);
+		index_Searcher.setSimilarity(new BM25Similarity());
 		PrintWriter print_Writer = new PrintWriter(result_Path, "UTF-8");
 	    try 
 	    {
 			File file = new File("src/cran/cran.qry");
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			Analyzer std_analyzer = new StandardAnalyzer();
+			Analyzer std_analyzer = new EnglishAnalyzer();
 			MultiFieldQueryParser multi_parser = new MultiFieldQueryParser(new String[] {"title","authors","locations","content"}, std_analyzer);
 			String line;
 		    int count = 1;
