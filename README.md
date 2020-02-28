@@ -5,12 +5,11 @@
 
 Following folder/file have been uploaded in the AWS Instance 
 
-  - Github cloned respoitory titles **"CS7IS3-IR-Lucene-Based-Search-Engine"** (Complete Project Folder)
+  - Github cloned respoitory titles **"CS7IS3-IR-Lucene-Based-Search-Engine"** (Complete Project Folder), link : https://github.com/ayushsinghania/CS7IS3-IR-Lucene-Based-Search-Engine
   - Source code present at **CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/src/main/java/luceneProject/**
   - trec_eval present at **CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/src/trec_eval-9.0.7**
   
 ## Login Credentials
-
 - Username: ayush
 - Password: ayush
 
