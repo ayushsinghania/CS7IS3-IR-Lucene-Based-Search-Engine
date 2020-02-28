@@ -13,7 +13,15 @@ Following folder/file have been uploaded in the AWS Instance
   - Open Terminal/Command Prompt on you PC/MAC/Linux System
   - Copy the commands present below one at a time
   
-# Instructions on how to build the source code
+# Login Credentials
+
+- Username: ayush
+- Password: ayush
+
+# AWS Instance's IP address
+ - IPv4 Public IP: 52.90.142.34
+
+# Instructions on how to access our AWS instance: 
   ```sh
 $ ssh ayush@ec2-52-90-142-34.compute-1.amazonaws.com
 
@@ -22,6 +30,9 @@ ayush@ec2-52-90-142-34.compute-1.amazonaws.com's password: ayush
 Enter **ayush** as password
 
 Now you are inside the AWS instance. Again copy the commands and run at a time
+
+# Instructions on how to build the source code
+
  ```sh
 $ cd CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/
 
