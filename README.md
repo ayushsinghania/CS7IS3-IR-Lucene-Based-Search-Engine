@@ -15,14 +15,15 @@ Following folder/file have been uploaded in the AWS Instance
 - Password: ayush
 
 ## AWS Instance's IP address
- - IPv4 Public IP: 52.90.142.34
+ - IPv4 Public IP: **52.90.142.34**
  
 ## Getting Started
 
 - Open Terminal/Command Prompt on you PC/MAC/Linux System
 - Copy the commands present below one at a time
+- **Note:** This project uses the new version of the QRel file renamed as **cranqrelnew**
 
-## Instructions on how to access our AWS instance: 
+## How to access our AWS instance: 
   ```sh
 $ ssh ayush@ec2-52-90-142-34.compute-1.amazonaws.com
 
@@ -32,7 +33,7 @@ Enter **ayush** as password
 
 Now you are inside the AWS instance. Again copy the commands and run at a time
 
-## Instructions on how to build the source code
+## How to build the source code
 
  ```sh
 $ cd CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/
@@ -41,15 +42,21 @@ $ sudo mvn package
 
 $[sudo] password for ayush: ayush (enter password if promted)
 ```
-## Instructions on how to run the source code
+## How to run the source code
  ```sh
 $ sudo java -jar target/luceneProject-0.0.1-SNAPSHOT.jar
 ```
-## Instructions on how to get the program's output
+## How to get the program's best output (score)
 ```sh
 $ cd src/trec_eval-9.0.7/
 
 $ make
 
-$ ./trec_eval ../cran/cranqrel ../../result.txt
+$ ./trec_eval ../cran/cranqrelnew ../EngAnalyzer_BM25.txt.txt
 ```
+
+## To display only Mean Average Precision (MAP) & Recall
+```sh
+$ ./trec_eval -m map -m recall ../cran/cranqrelnew ../EngAnalyzer_BM25.txt
+```
+
