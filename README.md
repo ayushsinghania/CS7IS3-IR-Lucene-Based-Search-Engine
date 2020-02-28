@@ -18,7 +18,7 @@ ayush@ec2-52-90-142-34.compute-1.amazonaws.com's password: ayush
 ```
 Enter **ayush** as password
 
-Now you are instide the AWS instance. Again copy the commands as run
+Now you are inside the AWS instance. Again copy the commands and run at a time
  ```sh
 $ cd CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/
 $ sudo mvn package
