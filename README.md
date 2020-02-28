@@ -16,6 +16,7 @@ Following folder/file have been uploaded in the AWS Instance
 
 ## AWS Instance's IP address
  - IPv4 Public IP: **52.90.142.34**
+ - Public DNS (IPv4): **ec2-52-90-142-34.compute-1.amazonaws.com**
  
 ## Getting Started
 
