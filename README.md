@@ -7,11 +7,6 @@ Following folder/file have been uploaded in the AWS Instance
   - Github cloned respoitory titles **"CS7IS3-IR-Lucene-Based-Search-Engine"** (Complete Project Folder)
   - Source code present at **CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/src/main/java/luceneProject/**
   - trec_eval present at **CS7IS3-IR-Lucene-Based-Search-Engine/luceneProject/src/trec_eval-9.0.7**
-
-# Getting Started
-
-  - Open Terminal/Command Prompt on you PC/MAC/Linux System
-  - Copy the commands present below one at a time
   
 # Login Credentials
 
@@ -20,6 +15,11 @@ Following folder/file have been uploaded in the AWS Instance
 
 # AWS Instance's IP address
  - IPv4 Public IP: 52.90.142.34
+ 
+ # Getting Started
+
+  - Open Terminal/Command Prompt on you PC/MAC/Linux System
+  - Copy the commands present below one at a time
 
 # Instructions on how to access our AWS instance: 
   ```sh
